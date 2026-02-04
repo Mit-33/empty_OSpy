@@ -391,7 +391,7 @@ while game_on:
     elif error:
         for e in pygame.event.get():
             if e.type == pygame.QUIT:
-                raise error
+                #raise error
                 pygame.quit()
                 sys.exit()
         screen.fill("#0000FF")
