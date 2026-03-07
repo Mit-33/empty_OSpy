@@ -68,9 +68,10 @@ def update(screen:pygame.Surface,eventGet:list[pygame.event.Event]):
                             with open("data/bin/.apps","a+") as file:
                                 f = file.tell()
                                 file.seek(0)
+								apps = file.read()
                                 if "data/bin/"+app+":" not in file.read():
                                     file.seek(f)
-                                    file.write("\ndata/bin/"+app+":data/bin/Python.png")
+                                    file.write(("\n" if apps else "") + "data/bin/"+app+":data/bin/Python.png")
                         break
     screen.fill("#FFFF00")
 
